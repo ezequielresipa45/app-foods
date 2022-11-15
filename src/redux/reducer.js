@@ -1,6 +1,7 @@
 const initialState = {
 
     foods: [],
+    favorites: [],
 
 };
 
@@ -13,6 +14,19 @@ const reducer = (state = initialState, action) => {
             ...state,
             foods: action.payload
         }
+
+    case 'ADD_FOOD':
+      return{
+        ...state,
+        favorites: [...state.favorites, action.payload]
+      }
+      
+      
+    case 'DELETE_FOOD':
+      return{
+        ...state,
+        favorites: [state.favorites.filter(f => f.id !== action.payload)]
+      }  
 
 
     default:
