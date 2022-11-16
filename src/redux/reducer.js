@@ -2,6 +2,9 @@ const initialState = {
 
     foods: [],
     favorites: [],
+    username : 'ezequielresipa45@gmail.com',
+    password : 'Eze1995!',
+    access: false,
 
 };
 
@@ -25,8 +28,17 @@ const reducer = (state = initialState, action) => {
     case 'DELETE_FOOD':
       return{
         ...state,
-        favorites: [state.favorites.filter(f => f.id !== action.payload)]
+        favorites: [...state.favorites.filter(f => f.idCategory !== action.payload)]
       }  
+
+
+
+      case 'SET_ACCESS':
+        return{
+          ...state,
+          access: true
+        }
+
 
 
     default:

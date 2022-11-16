@@ -1,26 +1,37 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { add_food, delete_food } from '../../redux/actions'
 
+
 function FoodDetail(props) {
 
 
+
+
+
+
+
+
       const { id } = useParams();
-      const [character, setCharacter] = useState([]);
+
+      const [character, setCharacter] = useState();
 
 
       const [isFav, setIsFav] = useState(false);
 
       const handleFavorite = ()=>{
       
+// console.log(character[0].idCategory)
+
       if(isFav){
         setIsFav(false);
-        props.delete_food(character.id)
+        props.delete_food(character.idCategory)
       }else{
         setIsFav(true);
         props.add_food(character)
+       
       }
     }
 
@@ -29,25 +40,43 @@ function FoodDetail(props) {
 
   useEffect(()=>{
     // console.log(props.foods)
-  setCharacter(props.foods.filter(food => food.idCategory === id))
-
-  props.favorites.forEach((fav) => {
+    let filtrado = props.foods.filter(food => food.idCategory === id);
 
 
-        
-    if (fav.idCategory === character[0].idCategory) {
-       setIsFav(true);
-    }
- });
+  setCharacter(filtrado[0])
+
 
   
-  },[props.favorites])
+  
+},[])
 
 
 
-  console.log(props.favorites)
+useEffect(()=>{
+  
+  props.favorites.forEach((fav) => {
 
- if(character.length === 0){
+    if(character && fav ){
+
+   if (fav.idCategory === character.idCategory) {
+       setIsFav(true);
+    }
+    }
+  });
+})
+
+
+
+
+
+
+  // console.log(character)
+  // console.log(character[0])
+  // console.log(props.favorites)
+
+
+
+ if(!character){
 
 return (
     <h2>Cargando...</h2>
@@ -64,9 +93,9 @@ return (
         <button onClick = {handleFavorite}>🤍</button>
       )
     }
-          
-          <p>{character[0].strCategory}</p>
-            <p>{character[0].strCategoryDescription}</p>
+          <Link to='/foods'><p>Volver</p></Link>
+          <p>{character.strCategory}</p>
+            <p>{character.strCategoryDescription}</p>
         </div>
       );
 

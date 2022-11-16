@@ -21,3 +21,11 @@ export const delete_food = (id) => {
     payload: id 
   };
 };
+
+
+export const set_access = ()=>{
+  return{
+    type: "SET_ACCESS",
+    
+  }
+}
