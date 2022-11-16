@@ -20,32 +20,6 @@ function Login({username,password,access}) {
   }
 
 
-
-
-
-  
-
-
-useEffect(()=>{
-
-
-  !access && navigate("/")
-
-
-},[access,navigate])
-
-
-
-
-
-
-
-
-
-
-
-
-
   const [userData, setUserData] = useState({
     username:'',
     password:''
