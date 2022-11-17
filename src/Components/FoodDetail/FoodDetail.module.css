@@ -1,0 +1,24 @@
+.container_foodDetails{
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 30px;
+    margin: 10px auto;
+    border-radius: 10px;
+
+}
+
+.container_foodDetails img{
+    margin: 10px;
+}
+
+.container_favorite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

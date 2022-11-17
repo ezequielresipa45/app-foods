@@ -1,0 +1,16 @@
+.container_foodsCard{
+    background-color: aliceblue;
+    text-decoration: none;
+    text-transform: uppercase;
+   padding: 4px;
+   border-radius: 5px;
+   color: black;
+
+}
+.container_foodsCard:hover{
+    background-color: bisque;
+}
+
+a{
+    text-decoration: none;
+}

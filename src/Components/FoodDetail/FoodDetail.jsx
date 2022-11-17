@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { add_food, delete_food } from '../../redux/actions'
+import style  from './FoodDetail.module.css'
 
 
 function FoodDetail(props) {
@@ -87,15 +88,20 @@ return (
 
 
     return (
-        <div>
+        <div className={style.container_foodDetails}>
+
+          <div className={style.container_favorite}>
+          <h2>{character.strCategory}</h2>
+
               {
       isFav ? (<button onClick = {handleFavorite}>❤️</button>) : (
         <button onClick = {handleFavorite}>🤍</button>
       )
     }
-          <Link to='/foods'><p>Volver</p></Link>
-          <p>{character.strCategory}</p>
+          </div>
             <p>{character.strCategoryDescription}</p>
+            <img src={character.strCategoryThumb} alt={character.strCategory} />
+            <Link to='/foods'>Volver</Link>
         </div>
       );
 

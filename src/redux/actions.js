@@ -23,9 +23,11 @@ export const delete_food = (id) => {
 };
 
 
-export const set_access = ()=>{
+export const set_access = (valor)=>{
   return{
     type: "SET_ACCESS",
-    
+    payload: valor
   }
 }
+
+

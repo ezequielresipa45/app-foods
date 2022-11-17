@@ -1,10 +1,11 @@
-import React , { useEffect, useState } from "react";
+import React , { useState } from "react";
 import { set_access } from "../../redux/actions";
 import { connect } from "react-redux";
 import {   useNavigate } from "react-router-dom";
+import style  from './Login.module.css'
 
 
-function Login({username,password,access}) {
+function Login({username,password,access, set_access}) {
 
 
 
@@ -12,7 +13,7 @@ function Login({username,password,access}) {
 
   function login(userData) {
     if (username === userData.username && password === userData.password) {
-      set_access();
+      set_access(true);
       navigate("/foods");
     } else {
       alert("Usuario o contraseña invalida");
@@ -37,14 +38,17 @@ function Login({username,password,access}) {
         const handleSubmit = (e)=>{
           e.preventDefault();
             login(userData)
+            
+            
            
           }  
 
+          console.log(access)
 
   return (
-    <div>
+    <div className={style.container_login}>
       
-      <h2> Soy El LOGIIIN</h2>
+      <h2> Ingrese sus datos</h2>
       
      
       <input type="text" placeholder='Usuario' value = {userData.username} onChange={handleInputChange} name='username'/>
@@ -73,8 +77,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    set_access: () => {
-      dispatch(set_access());
+    set_access: (valor) => {
+      dispatch(set_access(valor));
     },
   };
 };

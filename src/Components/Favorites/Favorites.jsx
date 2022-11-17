@@ -1,17 +1,48 @@
 import React from "react";
 import { connect } from "react-redux";
+import style  from './Favorites.module.css'
+
 
 function Favorites(props) {
 //   console.log(props.favorites);
 
   if (props.favorites.length !== 0) {
     return (
-      <div>
-        <h2>MIS FAVORITOS</h2>
+      <div className={style.container_favorites}>
+        <h2>MIS FAVORITOS ⭐</h2>
+
+
+
+      <div className={style.contenedor_variasFoods}>
 
         {props.favorites.map((fav, key) => {
-          return <p key={key}>{fav.strCategory}</p>;
+          return (
+            <div key={key} className = {style.container_food}>
+
+              <h2>{fav.strCategory}</h2>
+              <img src={fav.strCategoryThumb} alt={fav.strCategory} />
+
+
+
+            </div>
+         
+          
+          
+
+
+          
+          );
         })}
+
+      </div>
+
+
+
+
+
+
+
+
       </div>
     );
   } else {

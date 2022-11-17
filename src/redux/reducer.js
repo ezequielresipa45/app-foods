@@ -36,9 +36,8 @@ const reducer = (state = initialState, action) => {
       case 'SET_ACCESS':
         return{
           ...state,
-          access: true
+          access: action.payload
         }
-
 
 
     default:

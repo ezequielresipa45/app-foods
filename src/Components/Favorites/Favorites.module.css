@@ -1,0 +1,25 @@
+.container_favorites{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.container_food{
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.contenedor_variasFoods{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+}
