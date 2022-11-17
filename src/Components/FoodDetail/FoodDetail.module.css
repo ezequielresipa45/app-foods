@@ -22,3 +22,9 @@
     align-items: center;
     gap: 20px;
 }
+
+img{
+    width: 500px;
+    padding: 40px;
+
+}

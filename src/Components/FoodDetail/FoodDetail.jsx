@@ -41,10 +41,23 @@ function FoodDetail(props) {
 
   useEffect(()=>{
     // console.log(props.foods)
-    let filtrado = props.foods.filter(food => food.idCategory === id);
 
 
+if(props.newFoods.length === 0){
+  
+  let filtrado = props.foods.filter(food => food.idCategory === id);
   setCharacter(filtrado[0])
+
+
+}else{
+  let filtrado = props.newFoods.filter(food => food.idCategory === id);
+  setCharacter(filtrado[0])
+
+}
+
+
+
+
 
 
   
@@ -115,6 +128,7 @@ const mapStateToProps = (state) => {
   return {
     foods: state.foods,
     favorites: state.favorites,
+    newFoods: state.newFoods
   };
 };
 

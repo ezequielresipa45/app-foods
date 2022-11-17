@@ -1,0 +1,14 @@
+.containerForm{
+
+padding: 50px;
+text-align: center;
+}
+
+.forms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}

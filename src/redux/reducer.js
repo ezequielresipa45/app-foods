@@ -5,7 +5,7 @@ const initialState = {
     username : 'ezequielresipa45@gmail.com',
     password : 'Eze1995!',
     access: false,
-
+    newFoods: []
 };
 
 // El encargado de enviarle al state nuestros pedidos o cambios que querramos hacer.
@@ -38,6 +38,18 @@ const reducer = (state = initialState, action) => {
           ...state,
           access: action.payload
         }
+
+
+
+        case 'ADD_FOOD_NEW_MANUAL':
+          return{
+              ...state,
+
+              newFoods:  state.newFoods.length === 0 ? [...state.foods,action.payload ] : [...state.newFoods, action.payload ]
+
+          }
+
+
 
 
     default:

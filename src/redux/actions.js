@@ -16,18 +16,22 @@ export const add_food = (food) => {
 };
 
 export const delete_food = (id) => {
-  return { 
-    type: "DELETE_FOOD", 
-    payload: id 
+  return {
+    type: "DELETE_FOOD",
+    payload: id,
   };
 };
 
-
-export const set_access = (valor)=>{
-  return{
+export const set_access = (valor) => {
+  return {
     type: "SET_ACCESS",
-    payload: valor
-  }
-}
+    payload: valor,
+  };
+};
 
-
+export const add_food_new_manual = (food_new) => {
+  return {
+    type: "ADD_FOOD_NEW_MANUAL",
+    payload: food_new,
+  };
+};

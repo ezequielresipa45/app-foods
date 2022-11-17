@@ -42,6 +42,9 @@ function Nav({ set_access }) {
         <Link to="/foods">
           Foods 🥘
         </Link>
+        <Link to="/forms">
+          Add Food
+        </Link>
         <Link to="/">
           Home 🏠
         </Link>

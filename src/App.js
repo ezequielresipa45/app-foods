@@ -8,6 +8,7 @@ import Foods from "./Components/Foods/Foods";
 import FoodDetail from "./Components/FoodDetail/FoodDetail";
 import Favorites from "./Components/Favorites/Favorites";
 import { connect } from "react-redux";
+import Form from "./Components/Form/Form";
 
 
 
@@ -21,6 +22,7 @@ function App({ access }) {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/foods" element={<Foods />} />
+          <Route path="/forms" element={<Form />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/detail/:id" element={<FoodDetail />} />
           <Route path="/*" element={<Navigate to="/" />} />
